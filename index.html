@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<!--  http://sangsoonam.github.io/2019/07/27/how-to-embed-a-google-drive-video.html-->
+
+<head lang="en" dir="ltr">
+    <meta charset="utf-8">
+    <title>HackCBS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="venobox/venobox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #c4302b;">
+        <div class="navbar-nav">
+            <ul class="navbar-nav mr-auto">
+                <a class="navbar-brand" href="#">
+                    <img src="icon.png" width="30" height="30" alt="">
+                </a>
+                <li class="nav-item">
+                    <a class="navbar-brand" href="#"
+                        style="font-weight: 800;color:white;font-family: 'Architects Daughter', cursive;">VStream</a>
+                </li>
+                <li class="nav-item">
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="#steps" style="font-weight: 800;color:white;">How it works</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="#comments" style="font-weight: 800;color:white;">Comments</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid homepage" style="padding-top: 1%;background-image: url(bg.jpg);">
+        <div class="row">
+            <div class="col-lg-6 overflow-auto" style="padding-left: 10%; max-height: 700px;">
+                <div style="background-color: #C0E7FA; border-radius: 5px; padding: 20px; text-align: center;">
+                    <h4 style="font-weight: 800;">Got nothing on mind? <br>Here are the top trending videos:</h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            Genre : <input type="text" id="search" autocomplete="off"/><br><br>
+                        </div>
+                        <div class="col-lg-6">
+                            <button class="btn btn-danger rounded-pill" onclick="searchit()">Recommend</button><br><br>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <figure class="col-lg-6">
+
+                                    <a class="venobox" id=1 data-autoplay="true" data-vbtype="video"
+                                        href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                                        <img id=100 alt="picture" src="bg.jpg" class="img-fluid" />
+                                        <div class="play-btn"><i class="fa fa-play"></i></div>
+                                    </a>
+                                    <p id=10 class="urltext" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
+                                </figure>
+
+                                <figure class="col-lg-6">
+                                    <a class="venobox" id=2 data-autoplay="true" data-vbtype="video"
+                                        href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                                        <img id=200 alt="picture" src="bg.jpg" class="img-fluid" />
+                                        <div class="play-btn"><i class="fa fa-play"></i></div>
+                                    </a>
+                                    <p id=20 class="urltext2" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn2" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
+                                </figure>
+
+                                <figure class="col-lg-6">
+                                    <a class="venobox" id=3 data-autoplay="true" data-vbtype="video"
+                                        href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                                        <img id=300 alt="picture" src="bg.jpg" class="img-fluid" />
+                                        <div class="play-btn"><i class="fa fa-play"></i></div>
+                                    </a>
+                                    <p id=30 class="urltext3" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn3" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
+                                </figure>
+
+                                <figure class="col-lg-6">
+                                    <a class="venobox" id=4 data-autoplay="true" data-vbtype="video"
+                                        href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                                        <img id=400 alt="picture" src="bg.jpg" class="img-fluid" />
+                                        <div class="play-btn"><i class="fa fa-play"></i></div>
+                                    </a>
+                                    <p id=40 class="urltext4" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn4" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
+                                </figure>
+
+                                <figure class="col-lg-6">
+                                    <a class="venobox" id=5 data-autoplay="true" data-vbtype="video"
+                                        href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                                        <img id=500 alt="picture" src="bg.jpg" class="img-fluid" />
+                                        <div class="play-btn"><i class="fa fa-play"></i></div>
+                                    </a>
+                                    <p id=50 class="urltext5" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn5" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
+                                </figure>
+
+                                <figure class="col-lg-6">
+                                    <a class="venobox" id=6 data-autoplay="true" data-vbtype="video"
+                                        href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                                        <img  id=600  alt="picture" src="bg.jpg" class="img-fluid" />
+                                        <div class="play-btn"><i class="fa fa-play"></i></div>
+                                    </a>
+                                    <p id=60 class="urltext6" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn6" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
+                                </figure>
+
+                                <figure class="col-lg-6">
+                                    <a class="venobox" id=7 data-autoplay="true" data-vbtype="video"
+                                        href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                                        <img  id=700  alt="picture" src="bg.jpg" class="img-fluid" />
+                                        <div class="play-btn"><i class="fa fa-play"></i></div>
+                                    </a>
+                                    <p id=70 class="urltext7" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn7" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
+                                </figure>
+
+                                <figure class="col-lg-6">
+                                    <a class="venobox" id=8 data-autoplay="true" data-vbtype="video"
+                                        href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
+                                        <img  id=800  alt="picture" src="bg.jpg" class="img-fluid" />
+                                        <div class="play-btn"><i class="fa fa-play"></i></div>
+                                    </a>
+                                    <p id=80 class="urltext8" style="display: none;"></p>
+                                    <button class="btn btn-danger rounded-pill" id="copybtn8" style="margin-top: 10px;">Copy URL 👆</button>
+                                    
+                                </figure>
+                            
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="col-lg-6" style="padding-left: 10%; padding-right:10%;padding-top: auto;padding-bottom:3%;margin-left: auto;
+            margin-right: auto;">
+                <div class="wrapper">
+                    <div class="title-text">
+                        <div class="title login">Create a Room</div>
+                        <div class="title signup">Join a Room</div>
+                    </div>
+                    <div class="form-container">
+                        <div class="slide-controls">
+                            <input type="radio" name="slide" id="login" checked>
+                            <input type="radio" name="slide" id="signup">
+                            <label for="login" class="slide login">Create</label>
+                            <label for="signup" class="slide signup">Join</label>
+                            <div class="slider-tab">
+                            </div>
+                        </div>
+                        <div class="form-inner">
+                            <form onsubmit="return saveroom();" class="login">
+                                <div class="field">
+                                    <input type="text" placeholder="Your Name" id="name" required>
+                                </div>
+                                <div class="field">
+                                    <input type="email" placeholder="Your email" id="email" required>
+                                </div>
+                                <div class="field">
+                                    <input type="url" placeholder="URL of Video" id="link">
+                                </div>
+                                <center>
+                                    <h2 style="text-decoration: none;">OR</h2>
+                                </center>
+                                <!--<div class="field">-->
+                                <div class="field">
+                                    <input type="url" placeholder="Drive Link of Video" id="drive">
+                                    <center>
+                                    <a href="http://sangsoonam.github.io/2019/07/27/how-to-embed-a-google-drive-video.html" target="_blank" style="text-decoration: none;color:#C00000;">How do I do this?</a>
+                                    </center>
+                                </div>
+                                <br>
+                                <center>
+                                    <h2 style="text-decoration: none;">OR</h2>
+                                </center>
+                                <input type="file" id="device" onchange="uploadFile();">
+                                <div class="field btn">
+                                    <div class="btn-layer">
+                                    </div>
+
+                                    <input type="submit" value="Generate Room Code">
+                                </div>
+                                <!-- Button trigger modal -->
+                                <!--<button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    Launch demo modal
+                                </button>-->
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                ...
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="signup-link">
+                                    Want to join an existing room? <a href="">Join now</a>
+                                </div>
+                            </form>
+                       
+        
+                                <form onsubmit="return printfd(this);" class="signup" >
+                                <div class="field">
+                                    <input type="text" placeholder="Your Name" id="name-ag" required>
+                                </div>
+                                <div class="field">
+                                    <input type="text" placeholder="Room Code" id="your-key" required>
+                                </div>
+                            
+                                <div class="field btn">
+                                    <div class="btn-layer">
+                                    </div>
+                                    <input type="submit" value="Join">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="steps" class="container-fluid" style="padding-top: 3%;padding-bottom:4%;background-color:#aec6cf  ">
+
+        <div class="row align-items-center justify-content-center" style="font-weight:bold;font-size:x-large;">
+            How it works?
+        </div>
+
+        <div class="row" style="padding-left:10%;padding-right:10%;">
+            <div class="col-md-4 mt-4">
+                <div class="card profile-card-5">
+                    <div class="card-img-block">
+                        <img class="card-img-top" src="p2.gif" style="max-height:80%;" alt="Card image cap">
+                    </div>
+                    <div class="card-body pt-0">
+                        <h4 class="card-title" style="color:#C00000;font-weight: bold;">Step - 1</h4>
+                        <p class="card-text" style="font-weight:200;">
+                            Get url or play from suggestions
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-4">
+                <div class="card profile-card-5">
+                    <div class="card-img-block">
+                        <img class="card-img-top" src="p2.png" style="max-height:20%;" alt="Card image cap">
+                    </div>
+                    <div class="card-body pt-0">
+                        <h4 class="card-title" style="color:#C00000;font-weight: bold;">Step - 2</h4>
+                        <p class="card-text">
+                            Create/ Join a room
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-4">
+                <div class="card profile-card-5">
+                    <div class="card-img-block">
+                        <img class="card-img-top" src="p3.gif" alt="Card image cap">
+                    </div>
+                    <div class="card-body pt-0">
+                        <h4 class="card-title" style="color:#C00000;font-weight: bold;">Step - 3</h4>
+                        <p class="card-text">
+                            Enter a room and chat with friends
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="comments" class="container-fluid" style="padding-top: 3%;padding-bottom:4%;background-color:#decdc3">
+        <form style="padding-left:5%;padding-right:5%;">
+            <center>
+                <h3 style="font-weight: bold;">Comments?<h3>
+            </center>
+            <div class="row" style="padding-left:5%;">
+
+                <div class="col-7">
+                    
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Comments</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <center>
+                         <button type="submit" class="rounded-pill btn btn-danger" style="width:40%;">Submit</button>
+                        </center>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card-img-block">
+                        <img src="https://media.giphy.com/media/fAET4eXc6ygpeFRUsF/giphy.gif"  alt="Card image cap">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function copyURL(copyId) {
+            var $inp = $("<input>");
+            $("body").append($inp);
+            $inp.val($("" + copyId).text()).select();
+            document.execCommand("copy");
+            $inp.remove();
+            $(".alert").fadeIn(500, function () {
+                $(".alert").fadeOut();
+            });
+
+        }
+        $(document).ready(function () {
+            $("#copybtn").click(function () {
+                copyURL(".urltext");
+            });
+        });
+        $(document).ready(function () {
+            $("#copybtn2").click(function () {
+                copyURL(".urltext2");
+            });
+        });
+        $(document).ready(function () {
+            $("#copybtn3").click(function () {
+                copyURL(".urltext3");
+            });
+        });
+        $(document).ready(function () {
+            $("#copybtn4").click(function () {
+                copyURL(".urltext4");
+            });
+        });
+        $(document).ready(function () {
+            $("#copybtn5").click(function () {
+                copyURL(".urltext5");
+            });
+        });
+        $(document).ready(function () {
+            $("#copybtn6").click(function () {
+                copyURL(".urltext6");
+            });
+        });
+        $(document).ready(function () {
+            $("#copybtn7").click(function () {
+                copyURL(".urltext7");
+            });
+        });
+        $(document).ready(function () {
+            $("#copybtn8").click(function () {
+                copyURL(".urltext8");
+            });
+        });
+    </script>
+    <script>
+        const loginText = document.querySelector(".title-text .login");
+        const loginForm = document.querySelector("form.login");
+        const loginBtn = document.querySelector("label.login");
+        const signupBtn = document.querySelector("label.signup");
+        const signupLink = document.querySelector("form .signup-link a");
+        signupBtn.onclick = (() => {
+            loginForm.style.marginLeft = "-50%";
+            loginText.style.marginLeft = "-50%";
+        });
+        loginBtn.onclick = (() => {
+            loginForm.style.marginLeft = "0%";
+            loginText.style.marginLeft = "0%";
+        });
+        signupLink.onclick = (() => {
+            signupBtn.click();
+            return false;
+        });
+    </script>
+    <footer style="background-color:#decdc3">
+        <center>
+            <p>Made with ❤️ by hackingDivas, HackCBS 3.0</p>
+            <br>
+        </center>
+    </footer>
+    <script type="text/javascript" src="jquery/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="venobox/venobox.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.venobox').venobox({
+                closeColor: '#f4f4f4',
+                spinColor: '#f4f4f4',
+                closeBackground: '#17191D',
+                overlayColor: 'rgba(23, 25, 29, 0.8)'
+            });
+        });
+    </script>
+</body>
+
+</html>

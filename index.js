@@ -110,52 +110,56 @@ function printfd(){
     return false;
 }
 function sendkey(key) {
-    console.log("sending");
+    //console.log("sending");
     var email = document.getElementById("email").value;
     var name = document.getElementById("name").value;
     Email.send({
 
         Host: "smtp.gmail.com",
         Username: "vstream342@gmail.com",
-        Password: "vstream123$",
+        Password: "V@@!Vstream342$haha",
         To: email,
         From: "vstream342@gmail.com",
         Subject: "VStream Confirmation",
-        Body: "Hey " + name + "<br>" + "Your key is " + key ,
-    })
+        //Body: "Hello"
+        //Body: "Hey " + name + "<br>" + "Your key is " + key
+        Body : "email body",
+	}).then(
+		message => alert("mail sent successfully")
+    );
+    alert("done");
+    //})
 }
 
 function searchit(){
     //const getSearchTerm = () => searchTerms[Math.floor(Math.random() * (searchTerms.length-1))];
-const getSearchTerm = document.getElementById("search").value;
-    const Search = document.getElementById("search").value;
-const YOUTUBE_API_KEY = "AIzaSyDPMD5omw8N_S0XmemMIdebJ1AgQ0R7XA0";
-//url from YouTube docs modified for my random term and API key,
-//const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${getSearchTerm()}&key=${YOUTUBE_API_KEY}`;
-const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${getSearchTerm}&key=${YOUTUBE_API_KEY}`;
-//fetch function following the aforementioned process
-//const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${Search}&key=${YOUTUBE_API_KEY}`;
-fetch(url)
-  .then(response => response.json())
-  .then(data => {
-            for(var i = 1; i <= 20; i++){
-                if(data.items[i].id.videoId != undefined){
-                    //console.log( document.getElementById(i).href);
-                    console.log(data.items[i]);
-                    console.log(data.items[i].snippet.thumbnails.medium.url);
-                    document.getElementById(i*100).src = data.items[i].snippet.thumbnails.medium.url;
-                    document.getElementById(i).href = "https://www.youtube.com/watch?v=" + data.items[i].id.videoId;
-                    document.getElementById(i*10).innerHTML = "https://www.youtube.com/watch?v=" + data.items[i].id.videoId;
-                    console.log(data.items[i].id.videoId);
-            }
-    }
-    //console.log above is to help access proper data in the JSON
-    //object
-    //set iframe source to proper URL (notice same dynamic strings 
-    //used above)
-    //document.getElementById("video").src = `https://www.youtube.com/embed/${data.items[0].id.videoId}`;
-});
-document.getElementById("search").value = "";     
+    const getSearchTerm = document.getElementById("search").value;
+        const Search = document.getElementById("search").value;
+    //const YOUTUBE_API_KEY = "AIzaSyDPMD5omw8N_S0XmemMIdebJ1AgQ0R7XA0";
+    const YOUTUBE_API_KEY = "AIzaSyAfBswyF70BNHYTpln2FA1Lkiq3mbrbD2I";
+    //url from YouTube docs modified for my random term and API key,
+    //const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${getSearchTerm()}&key=${YOUTUBE_API_KEY}`;
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${getSearchTerm}&key=${YOUTUBE_API_KEY}`;
+    //fetch function following the aforementioned process
+    //const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${Search}&key=${YOUTUBE_API_KEY}`;
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+                for(var i = 1; i <= 20; i++){
+                
+                    if(data.items[i].id.videoId != undefined){
+                        //console.log( document.getElementById(i).href);
+                        console.log(data.items[i]);
+                        console.log(data.items[i].snippet.thumbnails.medium.url);
+                        document.getElementById(i*100).src = data.items[i].snippet.thumbnails.medium.url;
+                        document.getElementById(i).href = "https://www.youtube.com/watch?v=" + data.items[i].id.videoId;
+                        document.getElementById(i*10).innerHTML = "https://www.youtube.com/watch?v=" + data.items[i].id.videoId;
+                        console.log(data.items[i].id.videoId);
+                }
+        }
+    });
+    document.getElementById("search").value = "";     
 }
 
 const storage = firebase.storage();

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        Genre:
+        <input type="text" id="search"/>
+        <button onclick="searchit()">Recommend</button>
+        <script>
+            //youtube v3 aPI
+            //AIzaSyBEanfF9iVjGFRunpZTSGxoEXIJy4iYjpc
+            //array of random search terms (made them code related)
+            
+//array of random search terms (made them code related)
+const searchTerms = ["factory%20functions","data%20structures", "array%20functions%20javascript", "composition%20over%20inheritance", "lambda%20functions", "streams%20java", "higher%20order%functions%javascript", "functional%20programming", "c++%20lambda%20functions", "sorting%20algorithms"]; 
+//a function to get a random search term
+//variable for your API_KEY
+function searchit(){
+    //const getSearchTerm = () => searchTerms[Math.floor(Math.random() * (searchTerms.length-1))];
+const getSearchTerm = document.getElementById("search").value;
+    const Search = document.getElementById("search").value;
+const YOUTUBE_API_KEY = "AIzaSyDPMD5omw8N_S0XmemMIdebJ1AgQ0R7XA0";
+//url from YouTube docs modified for my random term and API key,
+//const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${getSearchTerm()}&key=${YOUTUBE_API_KEY}`;
+const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${getSearchTerm}&key=${YOUTUBE_API_KEY}`;
+//fetch function following the aforementioned process
+//const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${Search}&key=${YOUTUBE_API_KEY}`;
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+            for(var i = 0; i < 20; i++){
+                if(data.items[i].id.videoId != undefined){
+                    console.log(data.items[i].id.videoId);
+                }
+        }
+      
+    //console.log above is to help access proper data in the JSON
+    //object
+    //set iframe source to proper URL (notice same dynamic strings 
+    //used above)
+    //document.getElementById("video").src = `https://www.youtube.com/embed/${data.items[0].id.videoId}`;
+});
+}
+</script>
+    </body>
+</html>

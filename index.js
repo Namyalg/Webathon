@@ -45,7 +45,7 @@ var firebaseConfig = {
         ytlink = "2^" + ytlink;
         database.child(keyo).set(ytlink);
     }
-        alert("Your key is " + keyo + "\n" + "You will receive an email !");
+        //alert("Your key is " + keyo + "\n" + "You will receive an email !");
         document.getElementById("link").value = "";
         document.getElementById("device").value = "";
         document.getElementById("name").value = "";

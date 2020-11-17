@@ -25,9 +25,10 @@ var firebaseConfig = {
     //alert(keyo);
     //document.getElementById("device").value;
     //document.getElementById("name").value;
+    alert("A room key will be provided, use this to enter your theatre!!");
     alert(keyo);
     console.log(keyo);
-    sendkey(keyo);
+    //sendkey(keyo);
     if (document.getElementById("link").value.length == 0 && document.getElementById("drive").value.length == 0){
         console.log(file_name);
         database.child(keyo).set(file_name);
@@ -96,8 +97,7 @@ function gotoroom(){
     return false;
 }
 
-function printfd(){
-    console.log("HELLLL");
+function sendtoroom(){
     var name = document.getElementById("name-ag").value;
     //var fire = firebase.database().ref('Link');
     var val = document.getElementById("your-key").value;

@@ -28,7 +28,6 @@ var firebaseConfig = {
     alert("A room key will be provided, use this to enter your theatre!!");
     alert(keyo);
     console.log(keyo);
-    //sendkey(keyo);
     if (document.getElementById("link").value.length == 0 && document.getElementById("drive").value.length == 0){
         console.log(file_name);
         database.child(keyo).set(file_name);
@@ -51,14 +50,6 @@ var firebaseConfig = {
         document.getElementById("name").value = "";
   } 
 
-  //var firebaseOrdersCollection = database.ref().child('Questions');
-   
-  /*database.child("abcde").on('value',(snap)=>{
-    var url = "https://www.youtube.com/embed/" + snap.val() +"?autoplay=1&mute=1"
-    console.log(url);
-    document.getElementById("myFrame").src = url;
-  });
-*/
 function gotoroom(){
     //window.localStorage.setItem("ytlink", ytlink);
     //console.log(localStorage.getItem("ytlink"));
@@ -109,27 +100,6 @@ function sendtoroom(){
     window.location.href = "theatre.html?key=" + val + "&name=" + name;
     return false;
 }
-function sendkey(key) {
-    //console.log("sending");
-    var email = document.getElementById("email").value;
-    var name = document.getElementById("name").value;
-    Email.send({
-
-        Host: "smtp.gmail.com",
-        Username: "vstream342@gmail.com",
-        Password: "V@@!Vstream342$haha",
-        To: email,
-        From: "vstream342@gmail.com",
-        Subject: "VStream Confirmation",
-        //Body: "Hello"
-        //Body: "Hey " + name + "<br>" + "Your key is " + key
-        Body : "email body",
-	}).then(
-		message => alert("mail sent successfully")
-    );
-    alert("done");
-    //})
-}
 
 function searchit(){
     //const getSearchTerm = () => searchTerms[Math.floor(Math.random() * (searchTerms.length-1))];
@@ -176,6 +146,5 @@ function uploadFile(){
   //put request upload file to firebase storage
   thisRef.put(file).then(function(snapshot) {
      alert("File Uploaded");
-     //console.log('Uploaded a blob or file!');
   });
 }

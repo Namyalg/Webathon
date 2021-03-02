@@ -176,8 +176,8 @@
                     </div>
                     <div class="form-container">
                         <div class="slide-controls">
-                            <input type="radio" name="slide" id="login" checked>
-                            <input type="radio" name="slide" id="signup">
+                            <input type="radio" name="slide" id="login" checked autocomplete="off">
+                            <input type="radio" name="slide" id="signup" autocomplete="off">
                             <label for="login" class="slide login">Create</label>
                             <label for="signup" class="slide signup">Join</label>
                             <div class="slider-tab">
@@ -186,10 +186,10 @@
                         <div class="form-inner">
                             <form onsubmit = "return false" class="login" method="post">
                                 <div class="field">
-                                    <input type="text" placeholder="Your Name" id="name" required>
+                                    <input type="text" placeholder="Your Name" id="name" required autocomplete="off"> 
                                 </div>
                                 <div class="field">
-                                    <input type="email" placeholder="Your email" id="email" required>
+                                    <input type="email" placeholder="Your email" id="email" required autocomplete="off">
                                 </div>
                                 <div class="field">
                                     <input type="url" placeholder="URL of Video" id="link" autocomplete="off">

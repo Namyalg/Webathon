@@ -21,7 +21,11 @@ function uploadFile() {
           messagingSenderId : resp.messagingSenderId,
           appId : resp.appId,
         };
-        firebase.initializeApp(firebaseConfig);
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        }else {
+            firebase.app(); // if already initialized, use that one
+        }
         const storage = firebase.storage();
         var storageRef = firebase.storage().ref();
         // Get the file from DOM

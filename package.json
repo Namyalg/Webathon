@@ -1,0 +1,28 @@
+{
+  "name": "webathon",
+  "version": "1.0.0",
+  "description": "![Image](assets/logo.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "http-server -p 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Namyalg/Webathon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Namyalg/Webathon/issues"
+  },
+  "homepage": "https://github.com/Namyalg/Webathon#readme",
+  "dependencies": {
+    "netlify-lambda": "^2.0.3"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "http-server": "^0.12.3",
+    "netlify-cli": "^3.10.2"
+  }
+}

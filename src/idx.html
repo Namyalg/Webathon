@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+      //fetch(`/.netlify/functions/fetch-api-keys`)
+        //        .then(res => { console.log(res.text) })
+        function loadXMLDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     
+     
+      var resp = JSON.parse(this.responseText);
+      var firebaseConfig = {
+        apiKey: resp.apiKey,
+        authDomain : resp.authDomain,
+        projectId : resp.projectId,
+        storageBucket : resp.storageBucket,
+        messagingSenderId : resp.messagingSenderId,
+        appId : resp.appId,
+        measurementId : resp.measurementId,
+      };
+      console.log(resp);
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    }}
+}
+loadXMLDoc();
+    </script>
+    <h1>HEllo</h1>
+</body>
+

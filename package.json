@@ -21,8 +21,6 @@
     "netlify-lambda": "^2.0.3"
   },
   "devDependencies": {
-    "concurrently": "^6.0.0",
-    "http-server": "^0.12.3",
     "netlify-cli": "^3.10.2"
   }
 }

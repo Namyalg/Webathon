@@ -8,8 +8,8 @@ const handler = async (event) => {
     const MSG_SND = process.env.messagingSenderId
     const APP_ID = process.env.appId
     const MSRT_ID = process.env.measurementId
-  
-  
+    const YOUTUBE_API_KEY = process.env.YoutubeKey
+    const DB_URL = process.env.databaseURL
     return {
       statusCode: 200,
       //body : JSON.stringify({"apikey" : API_SECRET, "authDomain" : process.env.authDomain})
@@ -21,7 +21,9 @@ const handler = async (event) => {
                             "storageBucket" : STRG_BUCK, 
                             "messagingSenderId" : MSG_SND, 
                             "appId" : APP_ID,
-                            "measurementId" : MSRT_ID}),
+                            "measurementId" : MSRT_ID,
+                            "databaseURL" : DB_URL,
+                            "YoutubeKey" : YOUTUBE_API_KEY}),
       //body : JSON.stringify({"apikey" : API_SECRET}),
       //body: API_SECRET,
       // // more keys you can return:

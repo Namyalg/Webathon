@@ -12,6 +12,13 @@ This is a video demonstration to guide you through the working : https://www.you
 
 ![Image](assets/theatre.PNG)
 
+### Results
+This was a submission to the event Webathon conducted by PES University, Bangalore.
+We received an honourable mention for this project among the 50+ teams that participated
+
+### Future
+- Integration can be done with music APIs such as Spotify
+- This can also be extended to a peer study platform
 
 ### Contributors
 

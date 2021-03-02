@@ -12,8 +12,6 @@ const handler = async (event) => {
     const DB_URL = process.env.databaseURL
     return {
       statusCode: 200,
-      //body : JSON.stringify({"apikey" : API_SECRET, "authDomain" : process.env.authDomain})
-      //body : JSON.stringify(API_SECRET),
       body: JSON.stringify({
                             "apiKey" : API_SECRET,
                             "authDomain" : AUTH_DOMAIN, 
@@ -24,13 +22,9 @@ const handler = async (event) => {
                             "measurementId" : MSRT_ID,
                             "databaseURL" : DB_URL,
                             "YoutubeKey" : YOUTUBE_API_KEY}),
-      //body : JSON.stringify({"apikey" : API_SECRET}),
-      //body: API_SECRET,
-      // // more keys you can return:
-      // headers: { "headerName": "headerValue", ... },
-      // isBase64Encoded: true,
-    }
-  } catch (error) {
+    
+                }
+    } catch (error) {
     return { statusCode: 500, body: error.toString() }
   }
 }

@@ -54,10 +54,6 @@ function uploadFile() {
         const YOUTUBE_API_KEY = resp.YoutubeKey;
         const getSearchTerm = document.getElementById("search").value;
         const Search = document.getElementById("search").value;
-        //const YOUTUBE_API_KEY = "AIzaSyDPMD5omw8N_S0XmemMIdebJ1AgQ0R7XA0";
-        //const YOUTUBE_API_KEY = "AIzaSyAfBswyF70BNHYTpln2FA1Lkiq3mbrbD2I";
-        //url from YouTube docs modified for my random term and API key,
-        //const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${getSearchTerm()}&key=${YOUTUBE_API_KEY}`;
         const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${getSearchTerm}&key=${YOUTUBE_API_KEY}`;
         //fetch function following the aforementioned process
         //const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${Search}&key=${YOUTUBE_API_KEY}`;

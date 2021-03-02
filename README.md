@@ -4,6 +4,8 @@
 
 Check it out at https://stream4all.netlify.app/ 😁✨
 
+This is a video demonstration to guide you through the working : https://www.youtube.com/watch?v=LsNlE7k5v54
+
 ![Image](assets/landing.png)
 
 ![Image](assets/script.PNG)

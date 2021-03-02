@@ -124,7 +124,7 @@ function saveroom() {
         else if(document.getElementById("device").value.length == 0 && document.getElementById("drive").value.length == 0){
                 ytlink = document.getElementById("link").value;
                 ytlink = "1^" + ytlink;
-                alert("setting link in fb");
+                //alert("setting link in firebase");
                 database.child(roomkey).set(ytlink);   
             }
         else{

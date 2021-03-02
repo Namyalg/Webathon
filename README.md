@@ -1,4 +1,4 @@
-![Image](assets/logo.jpg)
+![Image](src/assets/logo.jpg)
 
 **Stream4All** is a platform for streaming content(a video in any format. eg: a drive link, a youtube video or a video from your PC) live with a group of friends.
 
@@ -6,11 +6,11 @@ Check it out at https://stream4all.netlify.app/ 😁✨
 
 This is a video demonstration to guide you through the working : https://www.youtube.com/watch?v=LsNlE7k5v54
 
-![Image](assets/landing.png)
+![Image](src/assets/landing.png)
 
-![Image](assets/script.PNG)
+![Image](src/assets/script.PNG)
 
-![Image](assets/theatre.PNG)
+![Image](src/assets/theatre.PNG)
 
 ### Results
 This was a submission to the event Webathon conducted by PES University, Bangalore.

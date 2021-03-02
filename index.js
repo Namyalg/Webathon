@@ -101,7 +101,7 @@ function sendtoroom(){
     return false;
 }
 
-function searchit(){
+function searchGenre(){
     //const getSearchTerm = () => searchTerms[Math.floor(Math.random() * (searchTerms.length-1))];
     const getSearchTerm = document.getElementById("search").value;
         const Search = document.getElementById("search").value;
@@ -141,6 +141,7 @@ function uploadFile(){
   var file = document.getElementById("device").files[0];
   console.log(file);
   //dynamically set reference to the file name
+  alert("on the way to upload");
   var thisRef = storageRef.child(file.name);
   file_name = file.name;
   //put request upload file to firebase storage

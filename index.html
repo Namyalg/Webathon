@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-<!--  http://sangsoonam.github.io/2019/07/27/how-to-embed-a-google-drive-video.html-->
 
-<head lang="en" dir="ltr">
+<head lang="en">
     <meta charset="utf-8">
     <title>Webathon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +22,6 @@
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="venobox/venobox.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="style.css">
-    
 </head>
 
 <body>
@@ -54,7 +52,7 @@
         </div>
     </nav>
 
-    <div class="container-fluid homepage" style="padding-top: 1%;background-image: url(bg.jpg);">
+    <div class="container-fluid homepage" style="padding-top: 1%;background-image: url(assets/bg.jpg);">
         <div class="row">
             <div class="col-lg-6 overflow-auto" style="padding-left: 10%; max-height: 700px;">
                 <div style="background-color: #C0E7FA; border-radius: 5px; padding: 20px; text-align: center;">
@@ -64,7 +62,7 @@
                             Genre : <input type="text" id="search" autocomplete="off"/><br><br>
                         </div>
                         <div class="col-lg-6">
-                            <button class="btn btn-danger rounded-pill" onclick="searchit()">Recommend</button><br><br>
+                            <button class="btn btn-danger rounded-pill" onclick="searchGenre()">Recommend</button><br><br>
                         </div>
                     </div>
                     
@@ -76,7 +74,7 @@
 
                                     <a class="venobox" id=1 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
-                                        <img id=100 alt="picture" src="bg.jpg" class="img-fluid" />
+                                        <img id=100 alt="picture" src="assets/bg.jpg" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
                                     <p id=10 class="urltext" style="display: none;"></p>
@@ -87,7 +85,7 @@
                                 <figure class="col-lg-6">
                                     <a class="venobox" id=2 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
-                                        <img id=200 alt="picture" src="bg.jpg" class="img-fluid" />
+                                        <img id=200 alt="picture" src="assets/bg.jpg" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
                                     <p id=20 class="urltext2" style="display: none;"></p>
@@ -98,7 +96,7 @@
                                 <figure class="col-lg-6">
                                     <a class="venobox" id=3 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
-                                        <img id=300 alt="picture" src="bg.jpg" class="img-fluid" />
+                                        <img id=300 alt="picture" src="assets/bg.jpg" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
                                     <p id=30 class="urltext3" style="display: none;"></p>
@@ -109,7 +107,7 @@
                                 <figure class="col-lg-6">
                                     <a class="venobox" id=4 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
-                                        <img id=400 alt="picture" src="bg.jpg" class="img-fluid" />
+                                        <img id=400 alt="picture" src="assets/bg.jpg" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
                                     <p id=40 class="urltext4" style="display: none;"></p>
@@ -120,7 +118,7 @@
                                 <figure class="col-lg-6">
                                     <a class="venobox" id=5 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
-                                        <img id=500 alt="picture" src="bg.jpg" class="img-fluid" />
+                                        <img id=500 alt="picture" src="assets/bg.jpg" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
                                     <p id=50 class="urltext5" style="display: none;"></p>
@@ -131,7 +129,7 @@
                                 <figure class="col-lg-6">
                                     <a class="venobox" id=6 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
-                                        <img  id=600  alt="picture" src="bg.jpg" class="img-fluid" />
+                                        <img  id=600  alt="picture" src="assets/bg.jpg" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
                                     <p id=60 class="urltext6" style="display: none;"></p>
@@ -142,7 +140,7 @@
                                 <figure class="col-lg-6">
                                     <a class="venobox" id=7 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
-                                        <img  id=700  alt="picture" src="bg.jpg" class="img-fluid" />
+                                        <img  id=700  alt="picture" src="assets/bg.jpg" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
                                     <p id=70 class="urltext7" style="display: none;"></p>
@@ -153,7 +151,7 @@
                                 <figure class="col-lg-6">
                                     <a class="venobox" id=8 data-autoplay="true" data-vbtype="video"
                                         href="https://youtu.be/VHgBM3NmrVk" data-size="1600x1067">
-                                        <img  id=800  alt="picture" src="bg.jpg" class="img-fluid" />
+                                        <img  id=800  alt="picture" src="assets/bg.jpg" class="img-fluid" />
                                         <div class="play-btn"><i class="fa fa-play"></i></div>
                                     </a>
                                     <p id=80 class="urltext8" style="display: none;"></p>
@@ -309,7 +307,7 @@
             <div class="col-md-4 mt-4">
                 <div class="card profile-card-5">
                     <div class="card-img-block">
-                        <img class="card-img-top" src="p3.gif" alt="Card image cap">
+                        <img class="card-img-top" src="assets/p3.gif" alt="Card image cap">
                     </div>
                     <div class="card-body pt-0">
                         <h4 class="card-title" style="color:#C00000;font-weight: bold;">Step - 3</h4>

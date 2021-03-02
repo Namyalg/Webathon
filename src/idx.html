@@ -19,12 +19,13 @@
         storageBucket : resp.storageBucket,
         messagingSenderId : resp.messagingSenderId,
         appId : resp.appId,
-        measurementId : resp.measurementId,
       };
-      console.log(resp);
+      console.log(firebaseConfig["apiKey"]);
       // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
+      //firebase.initializeApp(firebaseConfig);
     }}
+    xhttp.open("GET", `/.netlify/functions/fetch-api-keys`, true);
+  xhttp.send();
 }
 loadXMLDoc();
     </script>

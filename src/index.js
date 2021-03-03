@@ -7,6 +7,7 @@ function getRandomString(length) {
         return result;
 }
 var file_name;
+
 function uploadFile() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -102,12 +103,8 @@ function saveroom() {
         }
         
         var roomkey, ytlink;
-        //var file_name;
         var database = firebase.database().ref('Link');
         roomkey = getRandomString(10);
-        //alert(keyo);
-        //document.getElementById("device").value;
-        //document.getElementById("name").value;
         alert("A room key will be provided, use this to enter your theatre!!");
         alert(roomkey);
         //console.log(keyo);
@@ -151,4 +148,34 @@ function sendtoroom(){
     window.localStorage.setItem("name", name);
     window.location.href = "theatre.html?key=" + val + "&name=" + name;
     return false;
+}
+
+function submitcomment(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {   
+        var resp = JSON.parse(this.responseText);
+        var firebaseConfig = {
+          apiKey: resp.apiKey,
+          authDomain : resp.authDomain,
+          projectId : resp.projectId,
+          databaseURL: resp.databaseURL,
+          storageBucket : resp.storageBucket,
+          messagingSenderId : resp.messagingSenderId,
+          appId : resp.appId,
+        };
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        }else {
+            firebase.app(); // if already initialized, use that one
+        }
+        var database = firebase.database().ref('Feedback');
+        var comment = document.getElementById("comment").value;
+        database.push(comment)
+        document.getElementById("comment").value = "";
+        alert("Thank you for your valuable feedback");
+      }    
+    }
+    xhttp.open("GET", `/.netlify/functions/fetch-api-keys`, true);
+    xhttp.send();
 }

@@ -318,7 +318,7 @@
         </div>
     </div>
     <div id="comments" class="container-fluid" style="padding-top: 3%;padding-bottom:4%;background-color:#decdc3">
-        <form style="padding-left:5%;padding-right:5%;">
+        <form style="padding-left:5%;padding-right:5%;" onsubmit="return false" method="post">
             <center>
                 <h3 style="font-weight: bold;">Comments?<h3>
             </center>
@@ -326,17 +326,17 @@
 
                 <div class="col-7">
                     
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <label for="exampleFormControlInput1">Email address</label>
                         <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                    </div>
+                    </div>-->
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Comments</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                        <textarea class="form-control" id="comment" rows="5"></textarea>
                     </div>
                     <div class="form-group">
                         <center>
-                         <button type="submit" class="rounded-pill btn btn-danger" style="width:40%;">Submit</button>
+                         <button onclick="submitcomment()" class="rounded-pill btn btn-danger" style="width:40%;">Submit</button>
                         </center>
                     </div>
                 </div>

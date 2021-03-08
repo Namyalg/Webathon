@@ -1,3 +1,6 @@
+
+var link = window.localStorage.getItem("Linktovideo");
+var name = window.localStorage.getItem("name");
 function settheatre() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {

@@ -347,75 +347,7 @@
                 </div>
             </div>
         </form>
-    </div>
-    <script>
-        function copyURL(copyId) {
-            var $inp = $("<input>");
-            $("body").append($inp);
-            $inp.val($("" + copyId).text()).select();
-            document.execCommand("copy");
-            $inp.remove();
-            $(".alert").fadeIn(500, function () {
-                $(".alert").fadeOut();
-            });
-
-        }
-        $(document).ready(function () {
-            $("#copybtn").click(function () {
-                copyURL(".urltext");
-            });
-        });
-        $(document).ready(function () {
-            $("#copybtn2").click(function () {
-                copyURL(".urltext2");
-            });
-        });
-        $(document).ready(function () {
-            $("#copybtn3").click(function () {
-                copyURL(".urltext3");
-            });
-        });
-        $(document).ready(function () {
-            $("#copybtn4").click(function () {
-                copyURL(".urltext4");
-            });
-        });
-        $(document).ready(function () {
-            $("#copybtn5").click(function () {
-                copyURL(".urltext5");
-            });
-        });
-        $(document).ready(function () {
-            $("#copybtn6").click(function () {
-                copyURL(".urltext6");
-            });
-        });
-        $(document).ready(function () {
-            $("#copybtn7").click(function () {
-                copyURL(".urltext7");
-            });
-        });
-        $(document).ready(function () {
-            $("#copybtn8").click(function () {
-                copyURL(".urltext8");
-            });
-        });
-    </script>
-    <script>
-        const loginText = document.querySelector(".title-text .login");
-        const loginForm = document.querySelector("form.login");
-        const loginBtn = document.querySelector("label.login");
-        const signupBtn = document.querySelector("label.signup");
-        const signupLink = document.querySelector("form .signup-link a");
-        signupBtn.onclick = (() => {
-            loginForm.style.marginLeft = "-50%";
-            loginText.style.marginLeft = "-50%";
-        });
-        loginBtn.onclick = (() => {
-            loginForm.style.marginLeft = "0%";
-            loginText.style.marginLeft = "0%";
-        });
-    </script>
+     </div>
     <footer style="background-color:#decdc3">
         <center>
             <p>Made with ❤️ by hackingDivas, Webathon</p>
